@@ -114,10 +114,7 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-				<configuration>
-					<image>
-						<name>borisfc23/bookmarker-api-jib</name>
-					</image>
+				<configuration>					
 					<excludes>
 						<exclude>
 							<groupId>org.projectlombok</groupId>
