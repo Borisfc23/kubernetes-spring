@@ -1,22 +1,17 @@
-# This workflow will build a Java project with Maven, and cache/restore any dependencies to improve the workflow execution time
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-java-with-maven
 
-# This workflow uses actions that are not certified by GitHub.
-# They are provided by a third-party and are governed by
-# separate terms of service, privacy policy, and support
-# documentation.
-
-name: Java CI with Maven
+name: Build
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "**" ]
 
 jobs:
-  build:
-
+  build-bookmarker-api:
+    name:Build bookmarker-api
     runs-on: ubuntu-latest
-
+    defaults:
+      run:
+        working-directory: ./bookmarker-api
     steps:
     - uses: actions/checkout@v3
     - name: Set up JDK 17
@@ -26,4 +21,12 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Build with Maven
-      run: mvn -B package --file pom.xml
+      run: ./mvnw verify
+    
+    - if: ${{github.ref=='refs/heads/main'}}
+      name: Build and Publish Docker Image
+      run: |
+          docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
+          ./mvnw spring-boot:build-image -Dspring-boot.build-image.imageName=${{ secrets.DOCKER_USERNAME }}/bookmarker-api
+          docker push ${{ secrets.DOCKER_USERNAME }}/bookmarker-api
+      
