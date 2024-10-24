@@ -1,0 +1,4 @@
+spring.application.name=bookmarker-api
+spring.datasource.url=jdbc:sqlserver://Boris;trustServerCertificate=true;databaseName=db_bookmarker
+spring.datasource.username=sa
+spring.datasource.password=12345

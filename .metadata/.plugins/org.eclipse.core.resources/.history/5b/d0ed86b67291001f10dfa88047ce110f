@@ -1,0 +1,31 @@
+package com.synopsis.bookmarker.domain;
+
+import java.util.List;
+
+import org.springframework.data.domain.Page;
+
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+public class BookmarksDTO {
+	
+	private List<Bookmark> data;
+	private int totalElements;
+	private int totalPages;
+	private int currentPage;
+	private boolean isFirst;
+	private boolean isLast;
+	private boolean hasNext;
+	private boolean hasPrevious;
+	
+	public BookmarksDTO(Page<Bookmark> bookmarkPage) {
+		this.setData(bookmarkPage.getContent());
+		this.setTotalElements(bookmarkPage.getNumberOfElements());
+		this.setTotalPages(bookmarkPage.getTotalPages());
+		this.setCurrentPage(bookmarkPage.getNumber());
+		this.setFirst(bookmarkPage.isFirst());
+	}
+}
+

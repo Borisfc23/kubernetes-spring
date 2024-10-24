@@ -1,0 +1,5 @@
+package com.synopsis.bookmarker;
+
+public class DataInitializer {
+
+}

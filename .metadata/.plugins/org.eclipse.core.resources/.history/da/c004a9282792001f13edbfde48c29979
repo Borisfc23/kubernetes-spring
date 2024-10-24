@@ -1,0 +1,70 @@
+package com.synopsis.bookmarker;
+
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+
+import java.time.Instant;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.hamcrest.CoreMatchers;
+
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.web.servlet.MockMvc;
+
+import com.synopsis.bookmarker.domain.Bookmark;
+import com.synopsis.bookmarker.domain.BookmarkRepository;
+
+
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@AutoConfigureMockMvc
+class BookmarkControllerTest {
+	
+	@Autowired
+	private MockMvc mvc;
+	
+	@Autowired
+	BookmarkRepository bookmarkRepository;
+	
+	private List<Bookmark> bookmarks;
+	@BeforeEach
+	void setUp() {
+		bookmarkRepository.deleteAllInBatch();
+		bookmarks = new ArrayList<>();
+		bookmarks.add(new Bookmark(null, "Sivalabs", "http://sivalabs.in", Instant.now()));
+		bookmarks.add(new Bookmark(null, "Google", "http://google.com", Instant.now()));
+		bookmarks.add(new Bookmark(null, "StackOverflow", "http://stackoverflow.com", Instant.now()));
+		bookmarks.add(new Bookmark(null, "GitHub", "http://github.com", Instant.now()));
+		bookmarks.add(new Bookmark(null, "YouTube", "http://youtube.com", Instant.now()));
+		bookmarks.add(new Bookmark(null, "Reddit", "http://reddit.com", Instant.now()));
+		bookmarks.add(new Bookmark(null, "Medium", "http://medium.com", Instant.now()));
+		bookmarks.add(new Bookmark(null, "LinkedIn", "http://linkedin.com", Instant.now()));
+		bookmarks.add(new Bookmark(null, "Twitter", "http://twitter.com", Instant.now()));
+		bookmarks.add(new Bookmark(null, "Facebook", "http://facebook.com", Instant.now()));
+		bookmarks.add(new Bookmark(null, "Instagram", "http://instagram.com", Instant.now()));
+		bookmarks.add(new Bookmark(null, "Netflix", "http://netflix.com", Instant.now()));
+		bookmarks.add(new Bookmark(null, "Amazon", "http://amazon.com", Instant.now()));
+		bookmarks.add(new Bookmark(null, "Spotify", "http://spotify.com", Instant.now()));
+		bookmarks.add(new Bookmark(null, "Microsoft", "http://microsoft.com", Instant.now()));
+		bookmarks.add(new Bookmark(null, "Apple", "http://apple.com", Instant.now()));
+		bookmarks.add(new Bookmark(null, "Zoom", "http://zoom.us", Instant.now()));
+		bookmarks.add(new Bookmark(null, "Slack", "http://slack.com", Instant.now()));
+		bookmarks.add(new Bookmark(null, "Trello", "http://trello.com", Instant.now()));
+		bookmarks.add(new Bookmark(null, "Pinterest", "http://pinterest.com", Instant.now()));
+		bookmarks.add(new Bookmark(null, "Quora", "http://quora.com", Instant.now()));
+		bookmarkRepository.saveAll(bookmarks);
+	}
+	
+	@Test
+	void shouldGetBookarks() throws Exception{
+		mvc.perform(get("/api/bookmarks"))
+			.andExpect(status().isOk())
+			.andExpect(jsonPath("$.totalElementos", CoreMatchers.equalTo(0)));
+	}
+}

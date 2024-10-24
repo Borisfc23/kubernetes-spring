@@ -1,0 +1,2 @@
+INSERT INTO bookmarks (title,url,created_at) VALUES
+('ASDASDAS','HTTP://ASDASDAS',CURRENT_TIMESTAMP());

@@ -1,0 +1,5 @@
+package com.synopsis.bookmarker.domain;
+
+public class BookmarkMapper {
+	public BookmarksDTO toDTO(Bookmark bookmark);
+}

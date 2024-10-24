@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="BookmarkControllerTest" project="bookmarker-api" tests="1" started="1" failures="0" errors="1" ignored="0">
+  <testsuite name="com.synopsis.bookmarker.BookmarkControllerTest" time="0.747" displayname="BookmarkControllerTest" uniqueid="[engine:junit-jupiter]/[class:com.synopsis.bookmarker.BookmarkControllerTest]">
+    <testcase name="shouldGetBookarks" classname="com.synopsis.bookmarker.BookmarkControllerTest" time="0.747" displayname="shouldGetBookarks(int)" parameters="int" uniqueid="[engine:junit-jupiter]/[class:com.synopsis.bookmarker.BookmarkControllerTest]/[method:shouldGetBookarks(int)]">
+      <error>org.junit.jupiter.api.extension.ParameterResolutionException: No ParameterResolver registered for parameter [int page] in method [void com.synopsis.bookmarker.BookmarkControllerTest.shouldGetBookarks(int) throws java.lang.Exception].&#13;
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)&#13;
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)&#13;
+&#13;
+</error>
+    </testcase>
+  </testsuite>
+</testrun>

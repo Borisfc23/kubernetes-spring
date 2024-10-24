@@ -1,0 +1,20 @@
+package com.synopsis.bookmarker.domain;
+
+import java.util.List;
+
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+public class BookmarksDTO {
+	private List<Bookmark> data;
+	private int totalElements;
+	private int totalPages;
+	private int currentPage;
+	private boolean isFirst;
+	private boolean isLast;
+	private boolean hasNext;
+	private boolean hasPrevious;
+}
+

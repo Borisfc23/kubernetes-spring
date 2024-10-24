@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="BookmarkControllerTest" project="bookmarker-api" tests="1" started="1" failures="0" errors="0" ignored="0">
+  <testsuite name="com.synopsis.bookmarker.BookmarkControllerTest" time="1.02" displayname="BookmarkControllerTest" uniqueid="[engine:junit-jupiter]/[class:com.synopsis.bookmarker.BookmarkControllerTest]">
+    <testcase name="shouldGetBookarks" classname="com.synopsis.bookmarker.BookmarkControllerTest" time="1.02" displayname="shouldGetBookarks()" uniqueid="[engine:junit-jupiter]/[class:com.synopsis.bookmarker.BookmarkControllerTest]/[method:shouldGetBookarks()]"/>
+  </testsuite>
+</testrun>

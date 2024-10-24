@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="BookmarkControllerTest" project="bookmarker-api" tests="1" started="1" failures="1" errors="0" ignored="0">
+  <testsuite name="com.synopsis.bookmarker.BookmarkControllerTest" time="1.065" displayname="BookmarkControllerTest" uniqueid="[engine:junit-jupiter]/[class:com.synopsis.bookmarker.BookmarkControllerTest]">
+    <testcase name="shouldGetBookarks" classname="com.synopsis.bookmarker.BookmarkControllerTest" time="1.065" displayname="shouldGetBookarks()" uniqueid="[engine:junit-jupiter]/[class:com.synopsis.bookmarker.BookmarkControllerTest]/[method:shouldGetBookarks()]">
+      <failure>java.lang.AssertionError: No value at JSON path "$.totalElementos"&#13;
+	at org.springframework.test.util.JsonPathExpectationsHelper.evaluateJsonPath(JsonPathExpectationsHelper.java:302)&#13;
+	at org.springframework.test.util.JsonPathExpectationsHelper.assertValue(JsonPathExpectationsHelper.java:73)&#13;
+	at org.springframework.test.web.servlet.result.JsonPathResultMatchers.lambda$value$0(JsonPathResultMatchers.java:87)&#13;
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:214)&#13;
+	at com.synopsis.bookmarker.BookmarkControllerTest.shouldGetBookarks(BookmarkControllerTest.java:27)&#13;
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)&#13;
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)&#13;
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)&#13;
+Caused by: com.jayway.jsonpath.PathNotFoundException: No results for path: $['totalElementos']&#13;
+&#13;
+</failure>
+    </testcase>
+  </testsuite>
+</testrun>

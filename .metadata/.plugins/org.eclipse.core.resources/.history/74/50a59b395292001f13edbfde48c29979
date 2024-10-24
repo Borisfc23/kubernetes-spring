@@ -1,0 +1,5 @@
+localhost:8080/h2-console  =>entras cuando no pones una conexion en la app.properties y pones lo que dice Database: jdbc:h2:mem:b9c41ec3-236d-4a6f-8c34-babf92fadecb (H2 2.2) 
+H2 =>Es una base de datos en memoria que desaparece cuando se cierra la aplicacion y se ejecuta los sql que pongas en resources/db/migration y esto es con apoyo de la dependencia flywaydb
+mvn clean package =>Generamos el jar desde la consola
+docker build -t borisfc23/bookmarker-api .
+mvnw.cmd spring-boot:build-image -Dspring-boot.build-image.imageName=borisfc23/bookmarker-api 

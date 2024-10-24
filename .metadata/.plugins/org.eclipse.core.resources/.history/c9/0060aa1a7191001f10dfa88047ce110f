@@ -1,0 +1,5 @@
+package com.synopsis.bookmarker.domain;
+
+public class BookmarksDTO {
+
+}
